@@ -1,0 +1,9 @@
+.price-indicator {
+  background-color: #370053;
+  padding: 11px 15px;
+  border: 2px solid white;
+  border-radius: 13px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 120px;
+}

@@ -1,0 +1,14 @@
+.cart-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  height: 100%;
+}
+.cart-content > div {
+  display: flex;
+  align-items: center;
+}
