@@ -1,4 +1,4 @@
-export default function TextInput() {
+export default function TextInput(props) {
   return (
     <div>
       <label className="label-style">
