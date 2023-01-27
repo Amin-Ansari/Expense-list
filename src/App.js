@@ -1,6 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Cart from "./Components/UI/Cart";
+import CartsWrapper from "./Components/UI/CartsWrapper";
 
 function App() {
   let dataList = [
@@ -12,11 +12,13 @@ function App() {
   ];
   return (
     <div className="App">
-      <Cart className="cart" dynamicData={dataList[0]}></Cart>
-      <Cart className="cart" dynamicData={dataList[1]}></Cart>
-      <Cart className="cart" dynamicData={dataList[2]}></Cart>
-      <Cart className="cart" dynamicData={dataList[3]}></Cart>
-      <Cart className="cart" dynamicData={dataList[4]}></Cart>
+      <CartsWrapper>
+        <Cart className="cart" dynamicData={dataList[0]}></Cart>
+        <Cart className="cart" dynamicData={dataList[1]}></Cart>
+        <Cart className="cart" dynamicData={dataList[2]}></Cart>
+        <Cart className="cart" dynamicData={dataList[3]}></Cart>
+        <Cart className="cart" dynamicData={dataList[4]}></Cart>
+      </CartsWrapper>
     </div>
   );
 }
