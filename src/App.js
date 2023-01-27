@@ -1,6 +1,7 @@
 import "./App.css";
 import Cart from "./Components/UI/Cart";
 import CartsWrapper from "./Components/UI/CartsWrapper";
+import Form from "./Components/UI/Form";
 
 function App() {
   let dataList = [
@@ -12,6 +13,7 @@ function App() {
   ];
   return (
     <div className="App">
+      <Form>ss</Form>
       <CartsWrapper>
         <Cart className="cart" dynamicData={dataList[0]}></Cart>
         <Cart className="cart" dynamicData={dataList[1]}></Cart>

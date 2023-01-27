@@ -1,0 +1,14 @@
+.btn-container {
+  width: 100% !important;
+  display: flex;
+  justify-content: flex-end;
+}
+.add-btn {
+  background-color: #370053;
+  color: #fff;
+  padding: 15px 25px;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  border-radius: 6px;
+}
