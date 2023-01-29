@@ -15,11 +15,9 @@ function App() {
     <div className="App">
       <Form>ss</Form>
       <CartsWrapper>
-        <Cart className="cart" dynamicData={dataList[0]}></Cart>
-        <Cart className="cart" dynamicData={dataList[1]}></Cart>
-        <Cart className="cart" dynamicData={dataList[2]}></Cart>
-        <Cart className="cart" dynamicData={dataList[3]}></Cart>
-        <Cart className="cart" dynamicData={dataList[4]}></Cart>
+        {dataList.map((expense) => (
+          <Cart dynamicData={expense} />
+        ))}
       </CartsWrapper>
     </div>
   );
