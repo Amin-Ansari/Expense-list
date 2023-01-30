@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Cart from "./Components/UI/Cart";
 import CartsWrapper from "./Components/UI/CartsWrapper";
@@ -11,12 +12,23 @@ function App() {
     { date: new Date("09 / 11 / 2022"), title: "Some choclates", price: 34 },
     { date: new Date("08 / 10 / 2022"), title: "House rent", price: 600 },
   ];
+  const [dynamicList, updateDList] = useState(dataList);
+  const liftUpData = (...collectedData) => {
+    const [Listtitle, Listnumber, Listdate] = [...collectedData];
+    console.log(Listtitle, Listnumber, Listdate);
+    updateDList((previousData) => {
+      return [
+        { date: Listdate, title: Listtitle, price: Listnumber },
+        ...previousData,
+      ];
+    });
+  };
   return (
     <div className="App">
-      <Form>ss</Form>
+      <Form onLiftupData={liftUpData}></Form>
       <CartsWrapper>
-        {dataList.map((expense) => (
-          <Cart dynamicData={expense} />
+        {dynamicList.map((expense, index) => (
+          <Cart dynamicData={expense} key={index} />
         ))}
       </CartsWrapper>
     </div>
