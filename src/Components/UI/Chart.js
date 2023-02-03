@@ -22,7 +22,6 @@ export default function Chart(prop) {
     });
   }
   const maxValue = Math.floor(Math.max(...chartList.map((item) => item.vlaue)));
-  console.log(maxValue);
   return (
     <div className="chart-style">
       {chartList.map((bar, index) => {
