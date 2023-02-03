@@ -46,7 +46,7 @@ function App() {
       <Form onLiftupData={liftUpData}></Form>
       <CartsWrapper>
         <YearFilter onTakingSelectValue={updateSelect}></YearFilter>
-        <Chart></Chart>
+        <Chart chartData={dynamicList[selectValue]}></Chart>
         {outputedData}
       </CartsWrapper>
     </div>
