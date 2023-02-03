@@ -1,0 +1,13 @@
+.filter-wrapepr {
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 30px;
+}
+.filter-wrapepr p {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
