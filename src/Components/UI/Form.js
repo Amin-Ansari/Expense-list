@@ -22,13 +22,19 @@ export default function Form(props) {
   const formSubmission = (event) => {
     event.preventDefault();
     props.onLiftupData(title, number, date);
+    updateTitle("");
+    updateNumber("");
+    updateDate("");
   };
   return (
     <form action="#" onSubmit={formSubmission}>
       <div className="formContent">
-        <TextInput takeInputData={storeTextInput}></TextInput>
-        <NumberInput takeInputData={storeNumberInput}></NumberInput>
-        <DateInput takeInputData={storeDateInput}></DateInput>
+        <TextInput takeInputData={storeTextInput} value={title}></TextInput>
+        <NumberInput
+          takeInputData={storeNumberInput}
+          value={number}
+        ></NumberInput>
+        <DateInput takeInputData={storeDateInput} value={date}></DateInput>
         <AddButton></AddButton>
       </div>
     </form>

@@ -8,7 +8,11 @@ export default function DateInput(props) {
     <div>
       <label className="label-style">
         <span>Date</span>
-        <input type={"date"} onChange={exportInputData}></input>
+        <input
+          type={"date"}
+          onChange={exportInputData}
+          value={props.value}
+        ></input>
       </label>
     </div>
   );

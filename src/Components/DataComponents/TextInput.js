@@ -13,6 +13,7 @@ export default function TextInput(props) {
           id="TitleInput"
           className="input-style"
           onChange={exportInputData}
+          value={props.value}
         ></input>
       </label>
     </div>
