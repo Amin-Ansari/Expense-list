@@ -1,9 +1,9 @@
 import "./YearFilter.css";
 import SelectInput from "../DataComponents/SelectInput";
 
-export default function YearFilter() {
+export default function YearFilter(props) {
   const takeSelectValue = (takenValue) => {
-    console.log(takenValue);
+    props.onTakingSelectValue(takenValue);
   };
   return (
     <div className="filter-wrapepr">

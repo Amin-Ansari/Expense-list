@@ -19,6 +19,7 @@ function App() {
     [],
   ];
   const [dynamicList, updateDList] = useState(dataList);
+  const [selectValue, updateSelectValue] = useState(0);
   const liftUpData = (...collectedData) => {
     const [Listtitle, Listnumber, Listdate] = [...collectedData];
     updateDList((previousData) => {
@@ -28,18 +29,24 @@ function App() {
         title: Listtitle,
         price: Listnumber,
       });
-      console.log(thisListData);
       return [...thisListData];
     });
   };
+  const updateSelect = (updatedValue) => {
+    updateSelectValue(Number(updatedValue));
+  };
+  let outputedData = <p className="empty-pa">There is no item for this year</p>;
+  if (dynamicList[selectValue].length) {
+    outputedData = dynamicList[0].map((expense, index) => (
+      <Cart dynamicData={expense} key={index} />
+    ));
+  }
   return (
     <div className="App">
       <Form onLiftupData={liftUpData}></Form>
       <CartsWrapper>
-        <YearFilter></YearFilter>
-        {dynamicList[0].map((expense, index) => (
-          <Cart dynamicData={expense} key={index} />
-        ))}
+        <YearFilter onTakingSelectValue={updateSelect}></YearFilter>
+        {outputedData}
       </CartsWrapper>
     </div>
   );

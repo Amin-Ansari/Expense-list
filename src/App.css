@@ -37,3 +37,9 @@
     transform: rotate(360deg);
   }
 }
+.empty-pa {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-top: 20px;
+}
