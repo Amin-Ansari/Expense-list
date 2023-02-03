@@ -1,0 +1,32 @@
+.bar-container {
+  width: 8.33%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 0px;
+  transition: all 3s ease;
+}
+.bar-outer {
+  width: 17px;
+  height: 140px;
+  border-radius: 15px;
+  border: 1px solid black;
+  background-color: #baabf1;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.bar-inner {
+  background-color: #3f22af;
+  width: 100%;
+}
+.bar-label {
+  width: 100%;
+}
+.bar-label > h6 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 2px 0px 0px;
+}

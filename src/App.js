@@ -4,7 +4,7 @@ import Cart from "./Components/UI/Cart";
 import CartsWrapper from "./Components/UI/CartsWrapper";
 import Form from "./Components/UI/Form";
 import YearFilter from "./Components/UI/YearFilter";
-
+import Chart from "./Components/UI/Chart";
 function App() {
   let dataList = [
     [
@@ -46,6 +46,7 @@ function App() {
       <Form onLiftupData={liftUpData}></Form>
       <CartsWrapper>
         <YearFilter onTakingSelectValue={updateSelect}></YearFilter>
+        <Chart></Chart>
         {outputedData}
       </CartsWrapper>
     </div>
