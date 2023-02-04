@@ -6,7 +6,6 @@ import NumberInput from "../DataComponents/NumberInput";
 import DateInput from "../DataComponents/DateInput";
 import AddButton from "../DataComponents/AddButton";
 import AddNewExpense from "../DataComponents/AddNewExpense";
-import CancelButton from "../DataComponents/CancelButton";
 
 export default function Form(props) {
   const [title, updateTitle] = useState("");
@@ -16,7 +15,7 @@ export default function Form(props) {
     updateTitle(givenValue);
   };
   const storeNumberInput = (givenValue) => {
-    updateNumber(givenValue);
+    updateNumber(Number(givenValue));
   };
   const storeDateInput = (givenValue) => {
     updateDate(new Date(givenValue));
@@ -30,7 +29,6 @@ export default function Form(props) {
         alert("You can't submit empty inputs");
         break;
       } else {
-        console.log(item);
         valueList.push(item);
       }
     }
