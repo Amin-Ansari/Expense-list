@@ -23,8 +23,21 @@ export default function Form(props) {
   };
   const formSubmission = (event) => {
     event.preventDefault();
-    props.onLiftupData(title, number, date);
-    document.querySelectorAll("input").forEach((item) => (item.value = ""));
+    const allInputs = document.querySelectorAll("input");
+    const valueList = [];
+    for (let item of [title, number, date]) {
+      if (!item) {
+        alert("You can't submit empty inputs");
+        break;
+      } else {
+        console.log(item);
+        valueList.push(item);
+      }
+    }
+    if (valueList.length == allInputs.length) {
+      props.onLiftupData(...valueList.map((item) => item));
+      allInputs.forEach((item) => (item.value = ""));
+    }
   };
   function backToFirstContent() {
     updateContent(

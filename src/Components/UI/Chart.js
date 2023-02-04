@@ -16,6 +16,7 @@ export default function Chart(prop) {
     { label: "Dec", vlaue: 0 },
   ];
   if (prop.chartData.length > 0) {
+    console.log(prop);
     prop.chartData.forEach(function (item) {
       const month = item.date.getMonth();
       chartList[month].vlaue += item.price;
