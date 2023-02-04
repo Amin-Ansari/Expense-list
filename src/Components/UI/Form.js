@@ -5,6 +5,8 @@ import TextInput from "../DataComponents/TextInput";
 import NumberInput from "../DataComponents/NumberInput";
 import DateInput from "../DataComponents/DateInput";
 import AddButton from "../DataComponents/AddButton";
+import AddNewExpense from "../DataComponents/AddNewExpense";
+import CancelButton from "../DataComponents/CancelButton";
 
 export default function Form(props) {
   const [title, updateTitle] = useState("");
@@ -26,8 +28,15 @@ export default function Form(props) {
     updateNumber("");
     updateDate("");
   };
-  return (
-    <form action="#" onSubmit={formSubmission}>
+  function backToFirstContent() {
+    updateContent(
+      <div className="formContent">
+        <AddNewExpense onChangeContent={switchContent}></AddNewExpense>
+      </div>
+    );
+  }
+  const switchContent = () => {
+    updateContent(
       <div className="formContent">
         <TextInput takeInputData={storeTextInput} value={title}></TextInput>
         <NumberInput
@@ -35,8 +44,18 @@ export default function Form(props) {
           value={number}
         ></NumberInput>
         <DateInput takeInputData={storeDateInput} value={date}></DateInput>
-        <AddButton></AddButton>
+        <AddButton onReseting={backToFirstContent}></AddButton>
       </div>
+    );
+  };
+  const [formContent, updateContent] = useState(
+    <div className="formContent">
+      <AddNewExpense onChangeContent={switchContent}></AddNewExpense>
+    </div>
+  );
+  return (
+    <form action="#" onSubmit={formSubmission}>
+      {formContent}
     </form>
   );
 }
