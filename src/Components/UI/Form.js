@@ -16,7 +16,7 @@ export default function Form(props) {
     updateTitle(givenValue);
   };
   const storeNumberInput = (givenValue) => {
-    updateNumber(givenValue);
+    updateNumber(Number(givenValue));
   };
   const storeDateInput = (givenValue) => {
     updateDate(new Date(givenValue));
@@ -30,7 +30,6 @@ export default function Form(props) {
         alert("You can't submit empty inputs");
         break;
       } else {
-        console.log(item);
         valueList.push(item);
       }
     }
