@@ -13,7 +13,6 @@ export default function NumberInput(props) {
           min={0.1}
           step={0.1}
           onChange={exportInputData}
-          value={props.value}
         ></input>
       </label>
     </div>

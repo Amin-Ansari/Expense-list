@@ -1,6 +1,4 @@
-import { useState } from "react";
 export default function TextInput(props) {
-  const [inputValue, updateInputValue] = useState("");
   const exportInputData = (event) => {
     props.takeInputData(event.target.value);
   };
@@ -13,7 +11,6 @@ export default function TextInput(props) {
           id="TitleInput"
           className="input-style"
           onChange={exportInputData}
-          value={props.value}
         ></input>
       </label>
     </div>
